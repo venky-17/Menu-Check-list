@@ -48,7 +48,7 @@ function populateList(items = [], list) {
           ${checkboxHTML}
          
           <label for="item${i}">${item.text}</label>
-          <button class="deleteButton" data-index=${i} style="float:right;">Del</button>
+          <button class="deleteButton" data-index=${i} style="float:right;">✖</button>
         </li>
        
       `;
