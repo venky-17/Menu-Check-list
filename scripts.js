@@ -19,7 +19,7 @@ this.reset();
 //console.log(items);
 
 
-//setupDeleteButtons();
+setupDeleteButtons();
 }
 
 // function populateList(items = [], list) {
@@ -78,21 +78,21 @@ function toggleDone(e){
 //    populateList(items, itemsList);
 // }
 
-// function deleteItem() {
-//     const index = parseInt(this.dataset.index);
-//     items.splice(index, 1);
-//     localStorage.setItem('items', JSON.stringify(items));
-//     populateList(items, itemsList);
-//     setupDeleteButtons(); // Call the function to setup delete button event listeners
-//   }
+ function deleteItem() {
+   const index = parseInt(this.dataset.index);
+    items.splice(index, 1);
+    localStorage.setItem('items', JSON.stringify(items));
+     populateList(items, itemsList);
+   setupDeleteButtons(); 
+  }
 
-  // function setupDeleteButtons() {
-  //   const deleteButtons = document.querySelectorAll('.deleteButton');
-  //   deleteButtons.forEach(button => {
-  //     button.removeEventListener('click', deleteItem);
-  //     button.addEventListener('click', deleteItem);
-  //   });
-  // }
+   function setupDeleteButtons() {
+    const deleteButtons = document.querySelectorAll('.deleteButton');
+     deleteButtons.forEach(button => {
+       button.removeEventListener('click', deleteItem);
+       button.addEventListener('click', deleteItem);
+     });
+   }
 
   addItems.addEventListener('submit', addItem)
   itemsList.addEventListener('click', toggleDone)
